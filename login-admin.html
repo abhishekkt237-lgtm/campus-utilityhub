@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <title>Admin login Form</title>
+    <style>
+      
+        body {
+            font-family: roboto , arial;
+            margin: 0;
+            padding: 0;
+            background: #e6e6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .wrapper {
+            width: 850px;
+            background: white;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+        }
+
+        .left-panel {
+            width: 60%;
+            padding: 60px;
+        }
+
+        .welcome {
+            font-size: 41px;
+            margin-bottom: 60px;
+            text-align:center;
+           
+        }
+
+        .left-panel input {
+            width: 100%;
+            padding: 12px 0 7px 0;
+            font-size: 14px;
+            margin: 0px 0 15px 0px;
+            border: none;
+            outline: none;
+            color:#777;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        .forgot {
+          display:inline-block;
+            font-size: 14px;
+            color: #525050;
+           margin-left:278px;
+            text-decoration:none;
+            transition: all 0.15s;
+        }
+        .forgot:hover {
+          text-decoration:underline;
+          color: #292828;
+        }
+
+        .signin {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 20px;
+            text-align:right;  
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #c79d5e;
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 40px 0 15px 0;
+            transition:all 0.15s;
+        }
+        .btn:hover {
+          background-color: #c69448;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            background: white;
+            color: #555;
+            font-size: 14px;
+            margin-right:2.5px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .social-btn:hover {
+          background-color: #acabab;
+          color:white;
+          border-color:#acabab
+          
+        }
+
+        .right-panel {
+            width: 40%;
+            background-image: url(download.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+        }
+
+        .role {
+          width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            background: white;
+            color: #555;
+            font-size: 14px;
+            margin-left:2.5px;
+            cursor: pointer;
+            transition: all 0.15s;
+            
+        }
+        .role:hover {
+           background-color: #acabab;
+          color:white;
+          border-color:#acabab
+          
+        }
+        .role:active {
+          background-color:#c0bdbd;
+          border-color:#c0bdbd
+        }
+        .social-btn:active{
+           background-color:#c0bdbd;
+          border-color:#c0bdbd
+
+        }
+        .btn:active {
+  background-color: #987238;}
+        .last {
+          display:flex;
+
+        }
+        .social {
+          flex:1;
+        }
+        .role1 {
+         flex:1;
+        }
+       .admission {
+        margin-top:0;
+       }
+       .password {
+        margin-top:0;
+       }
+          .view {
+          z-index: 5;
+          position: absolute;
+            display:inline-block;
+            font-size: 14px;
+            color: #525050;
+            text-decoration:none;
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+         .view:hover {
+           text-decoration:underline;
+          color: #292828;
+         }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="left-panel">
+            <h2 class="welcome">Welcome Admin</h2>
+            <label>REGISTERED EMAIL</label>
+            <input type="text" class="admission" placeholder="" />
+
+            <label>PASSWORD</label>
+            <input type="password" class="password" id="password" placeholder="" />
+            
+            <a class="view" type="button" id="togglePassword">
+            View password
+            </a>
+
+            <a onclick="alert('Contact Developer')" class="forgot">Forgot password?</a>
+            <button class="btn">LOG IN</button>
+            <div class="last">
+           
+            <div class="role1">
+            <a href="login-student.html"><button class="role">Change role</button></a>
+            </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+           
+        </div>
+    </div>
+
+       <script>
+  const passwordInput = document.getElementById("password");
+  const toggleBtn = document.getElementById("togglePassword");
+
+  toggleBtn.addEventListener("click", () => {
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      toggleBtn.innerText = "Hide password";
+    } else {
+      passwordInput.type = "password";
+      toggleBtn.innerText = "View password";
+    }
+  });
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  // 🔹 Your Firebase config
+ const firebaseConfig = {
+    apiKey: "AIzaSyAVGVP0c6e9KMdp2RmqOeGGVxr8kFsXZ7M",
+    authDomain: "campus-utility-hub-iitism.firebaseapp.com",
+    projectId: "campus-utility-hub-iitism",
+    storageBucket: "campus-utility-hub-iitism.firebasestorage.app",
+    messagingSenderId: "281851939722",
+    appId: "1:281851939722:web:62f0da477d4c2a917f5673"
+  };
+
+  // 🔹 Init Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // 🔹 Login button
+  document.querySelector(".btn").addEventListener("click", async () => {
+    const email = document.querySelector(".admission").value.trim();
+    const password = document.querySelector(".password").value.trim();
+
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    // ❌ BLOCK STUDENTS
+    if (email.endsWith("@iitism.ac.in")) {
+      alert("Students are not allowed on Admin Login Page");
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      window.location.href = "main-page/adminfront.html";
+    } catch (error) {
+     alert(error.message);
+    }
+  });
+</script>
+
+
+</body>
+</html>

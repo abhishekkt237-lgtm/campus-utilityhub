@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>Complete your Profile</title>
+
+  <style>
+    * {
+      font-family: roboto, areial;
+       
+  box-sizing: border-box;
+    }
+
+    body {
+      background-image: linear-gradient(135deg, #3a616881,#b0b1b336, #3a616881);
+      padding: 0 65px;
+    }
+    
+    .header {
+      text-align: center;
+      font-size: 25px;
+      margin:none
+
+    }
+     .head {
+      margin: 5px 0 15px 0;
+
+    }
+  .detail {
+    display:flex;
+
+   }
+  .hostel {
+     margin-left: auto;
+     max-width: 635px;
+     width: 100%;
+     font-size:20px;
+     border-radius: 6px;
+     box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2);
+   }
+   
+  .personal{
+     max-width: 635px;
+     width: 100%;
+     font-size:20px;
+     border-radius: 6px;
+     box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.2);
+   }
+   .personal input {
+    width:100%;
+   background-image: linear-gradient(180deg, #aab1bd, #7d8699);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin:16.7px 0 38px 0;
+    outline: none;
+    font-size: 16px;
+    color: rgb(28, 28, 28);
+    border-color: #ccc;
+   }
+   .hostel input {
+     width:100%;
+   background-image: linear-gradient(180deg, #aab1bd, #7d8699);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin:15px 0 40px 0;
+    outline: none;
+    font-size: 16px;
+    color: rgb(32, 32, 32);
+    border-color: #ccc;
+   }
+   .personal p {
+    margin: 0
+   }
+   .hostel p{
+     margin: 0
+   }
+   .topicleft {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    background-color: #5c6e92;
+    padding: 10px 0;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+   }
+   .hostelname {
+    font-size: 16px;
+    width:100%;
+    margin: 15px 0 40px 0;
+    border: none;
+    outline: none;
+     background-image: linear-gradient(180deg, #aab1bd, #7d8699);
+    border-bottom: 2px solid #ccc;
+   }
+   .hostelblock {
+    font-size: 16px;
+    width:100%;
+    margin: 15px 0 40px 0;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(180deg, #aab1bd, #7d8699);
+    border-bottom: 2px solid #ccc;
+   }
+   .hostelmess {
+    font-size: 16px;
+    width:100%;
+    margin: 15px 0 40px 0;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(180deg, #aab1bd, #7d8699);
+    border-bottom: 2px solid #ccc;
+   
+   }
+   .btn {
+    text-align: center;
+    margin: 15px 0px 0 auto;
+   }
+   .btn button {
+    font-size: 18px;
+    margin: 0 0px 0 2px;
+    padding: 8px 0 5px 0;
+    width: 150px;
+    background-color:  #53617ce2;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s;
+   } 
+   .btn button:hover {
+    background-color:  #464f5fe2;
+   }
+   .contentleft {
+       background-color: #aab1bd;
+      padding: 2% 2.5% 0 2.5%;
+      border-radius: 0px 0px 6px 6px ;
+    }
+    .contentright {
+      background-color: #aab1bd;
+      padding: 2% 2.5% 0 2.5%;
+      border-radius: 0px 0px 6px 6px ;
+    }
+    .topicright {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      background-color:  #5c6e92;
+      padding: 10px 0;
+      border-radius: 6px 6px 0 0;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+   }
+   .bottom {
+    display: flex;
+    margin: 8px 0 0 0;
+
+
+   }
+    .warning {
+      color:rgb(197, 7, 7);
+    }
+    .necc {
+      color: rgb(197, 7, 7);
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h2 class="head">Complete Your Profile</h2>
+</div>
+
+<div class="detail">
+
+<div class="personal">
+  <div class="topicleft">PERSONAL DETAILS</div>
+  <div class="contentleft">
+  <p>Full Name</p>
+  <input type="text" id="fullName" placeholder="">
+  <p>Admission Number<span class="necc">*</span></p>
+  <input type="text" id="role" placeholder="" readonly>
+  <p>Branch</p>
+  <input type="text" id="branch" placeholder="">
+  <p>Date of birth<span class="necc">*</span></p>
+  <input type="date" id="birth" placeholder="">
+  <p>Phone Number</p> 
+  <input type="number" id="phone" placeholder="">
+</div>
+</div>
+
+<div class="hostel">
+    <div class="topicright">HOSTEL DETAILS</div>
+    <div class="contentright">
+ <p>Hostel<span class="necc">*</span></p>
+      <select id="hostel" class="hostelname" required>
+        <option value="">Select Hostel</option>
+        <option>Amber</option>
+        <option>Diamond</option>
+        <option>Jasper </option>
+        <option>Sapphire</option>
+        <option>Topaz</option>
+        <option>Aquamarine</option>
+        <option>Emerald</option>
+        <option>Opal</option>
+        <option>Rosaline and Ruby</option>
+        <option>International Hostel</option>
+      </select>
+
+  <p>Block<span class="necc">*</span></p>
+  <select id="block" class="hostelblock" required>
+        <option value="">Select Block</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C </option>
+        <option>D</option>
+        <option>E</option>
+        <option>F</option>
+      </select>
+  
+  <p>Room Number<span class="necc">*</span></p>
+  <input type="number" id="rnumber" placeholder="">
+  <p>Mess Selection<span class="necc">*</span></p>
+  <select id="mess" class="hostelmess" required>
+        <option value="">Select Food Type</option>
+        <option>Veg</option>
+        <option>Non-veg</option>
+        <option>Jain food </option>
+        <option>No mess</option>
+      </select>
+  <p>Laundary ID<span class="necc">*</span></p> 
+  <input type="number" id="laundary" placeholder="">
+</div>
+</div>
+
+</div> 
+<div class="bottom">
+<p class="warning">
+  &#8226; Please ensure all information is accurate, as providing incorrect details may lead to verification issues and potential consequences.<br>
+  &#8226; fields marked as * can not be modified once submitted,please review carefully before confirming.
+
+</p>
+
+<div class="btn">
+   <button id="saveDetails">Save Details</button>
+   <button class="clear">Clear All</button>
+</div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc } 
+from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAVGVP0c6e9KMdp2RmqOeGGVxr8kFsXZ7M",
+  authDomain: "campus-utility-hub-iitism.firebaseapp.com",
+  projectId: "campus-utility-hub-iitism",
+  storageBucket: "campus-utility-hub-iitism.firebasestorage.app",
+  messagingSenderId: "281851939722",
+  appId: "1:281851939722:web:62f0da477d4c2a917f5673"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+let currentUser = null;
+
+function getAdmissionFromEmail(email) {
+  return email.split("@")[0].toUpperCase();
+}
+
+
+
+// 🔐 AUTH CHECK + BLOCK RE-ENTRY
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  currentUser = user;
+
+  // ✅ AUTO-FILL ADMISSION NUMBER
+  const admissionNo = getAdmissionFromEmail(user.email);
+  document.getElementById("role").value = admissionNo;
+
+  const snap = await getDoc(doc(db, "users", user.uid));
+  if (snap.exists()) {
+    alert("You are already a registered user.");
+    window.location.href = "dashboard.html";
+  }
+});
+
+
+// 💾 SAVE DETAILS
+document.getElementById("saveDetails").addEventListener("click", async () => {
+  if (!currentUser) {
+    alert("User not authenticated yet");
+    return;
+  }
+
+  const data = {
+    fullName: document.getElementById("fullName").value.trim(),
+    admission: document.getElementById("role").value.trim(),
+    branch: document.getElementById("branch").value.trim(),
+    dob: document.getElementById("birth").value,
+    phone: document.getElementById("phone").value,
+    hostel: document.getElementById("hostel").value,
+    block: document.getElementById("block").value,
+    room: document.getElementById("rnumber").value,
+    mess: document.getElementById("mess").value,
+    laundry: document.getElementById("laundary").value,
+    email: currentUser.email,
+    createdAt: new Date()
+  };
+
+  // 🔎 VALIDATION
+  for (let key in data) {
+    if (!data[key]) {
+      alert("Please fill all details");
+      return;
+    }
+  }
+
+  try {
+    await setDoc(doc(db, "users", currentUser.uid), data);
+    alert("Profile saved successfully");
+    window.location.href = "set-password.html";
+  } catch (e) {
+    console.error(e);
+    alert("Failed to save details");
+  }
+});
+
+// 🧹 CLEAR BUTTON
+document.querySelector(".clear").addEventListener("click", () => {
+  document.querySelectorAll("input, select").forEach(el => {
+    if (el.id !== "role") {
+      el.value = "";
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<h2>User Profile</h2>
+<p><b>Name:</b> <span id="name"></span></p>
+<p><b>Admission:</b> <span id="admission"></span></p>
+<p><b>Branch:</b> <span id="branch"></span></p>
+<p><b>Hostel:</b> <span id="hostel"></span></p>
+<p><b>Room:</b> <span id="room"></span></p>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } 
+from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyAVGVP0c6e9KMdp2RmqOeGGVxr8KFsXZ7M",
+  projectId: "campus-utility-hub-iitism"
+});
+
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) return location.href = "login.html";
+
+  const snap = await getDoc(doc(db, "users", user.uid));
+  if (snap.exists()) {
+    const d = snap.data();
+    name.textContent = d.fullName;
+    admission.textContent = d.admission;
+    branch.textContent = d.branch;
+    hostel.textContent = d.hostel;
+    room.textContent = d.room;
+  }
+});
+</script>
